@@ -84,7 +84,7 @@ const HomeScreen: React.FC<Props> = () => {
           if (route.name === 'Feed') {
             iconName = focused ? 'md-home' : 'md-home-outline';
           } else if (route.name === 'Explore') {
-            iconName = focused ? 'ios-earth' : 'ios-earth-outline';
+            iconName = focused ? 'search-sharp' : 'search-outline';
           } else if (route.name === 'Activity') {
             iconName = focused ? 'heart-sharp' : 'heart-outline';
           } else if (route.name === 'Profile') {
