@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Image} from 'react-native';
+import React, {useState, useCallback} from 'react';
+import {View, Image, ScrollView, RefreshControl} from 'react-native';
 import styled from 'styled-components/native';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -33,7 +33,20 @@ const Logo = styled(Image)`
 
 const StyledIcon = styled(Ionicons)``;
 
+const wait = (timeout: number) => {
+  return new Promise(resolve => {
+    setTimeout(resolve, timeout);
+  });
+};
+
 const FeedScreen: React.FC = () => {
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    wait(4000).then(() => setRefreshing(false));
+  }, []);
+
   return (
     <View>
       <TopBar>
@@ -55,7 +68,12 @@ const FeedScreen: React.FC = () => {
           />
         </TopLeftBtnGrp>
       </TopBar>
-      <StoryContainer />
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
+        <StoryContainer />
+      </ScrollView>
     </View>
   );
 };
