@@ -10,6 +10,7 @@
 
 import React from 'react';
 
+import {SafeAreaView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -22,12 +23,16 @@ const ScreenStack = createNativeStackNavigator<BaseParamList>();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <ScreenStack.Navigator screenOptions={{headerShown: false}} initialRouteName="Home">
-        <ScreenStack.Screen name="Home" component={HomeScreen} />
-        <ScreenStack.Screen name="Congrats" component={CongratsScreen} />
-      </ScreenStack.Navigator>
-    </NavigationContainer>
+    <SafeAreaView style={{flex: 1}}>
+      <NavigationContainer>
+        <ScreenStack.Navigator
+          screenOptions={{headerShown: false}}
+          initialRouteName="Home">
+          <ScreenStack.Screen name="Home" component={HomeScreen} />
+          <ScreenStack.Screen name="Congrats" component={CongratsScreen} />
+        </ScreenStack.Navigator>
+      </NavigationContainer>
+    </SafeAreaView>
   );
 };
 
