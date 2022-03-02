@@ -8,25 +8,13 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import BaseParamList from '../BaseParamList';
 
+import FeedScreen from './FeedScreen';
+
 Ionicons.loadFont();
 
 type Props = NativeStackNavigationProp<BaseParamList, 'Home'>;
 
 const Tab = createBottomTabNavigator();
-
-const FeedScreen = () => {
-  return (
-    <View
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100%',
-      }}>
-      <Text>Feed</Text>
-    </View>
-  );
-};
 
 const ExploreScreen = () => {
   return (
