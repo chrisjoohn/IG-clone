@@ -9,6 +9,7 @@ const Wrapper = styled(View)`
   width: 100%;
   background: #fff;
   padding-top: 30px;
+  margin-bottom: 30px;
 `;
 
 const PostContainer: React.FC<Props> = props => {
