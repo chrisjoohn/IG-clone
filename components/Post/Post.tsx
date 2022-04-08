@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 import React from 'react';
-import {View, Image, Text} from 'react-native';
+import { View, Image, Text } from 'react-native';
 
-import {Post as Props} from '../../common/PostTypes';
+import { Post as Props } from '../../common/PostTypes';
 
 const Wrapper = styled(View)`
   padding: 10px 15px;
@@ -11,6 +11,7 @@ const Wrapper = styled(View)`
 const TopBar = styled(View)`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 `;
 
 const AuthorDetailContainer = styled(View)`
@@ -36,6 +37,17 @@ const Username = styled(Text)`
   font-weight: bold;
 `;
 
+const MediaContainer = styled(View)`
+  min-height: 400px;
+  width: 100%;
+`;
+
+const Media = styled(Image)`
+  width: 100%;
+  max-height: 400px;
+  height: 400px;
+`
+
 const Post: React.FC = props => {
   /*
   const {
@@ -57,8 +69,13 @@ const Post: React.FC = props => {
             <Username>iam_doggo</Username>
           </AuthorDetail>
         </AuthorDetailContainer>
-        <View style={{height: 400, width: '100%'}} />
       </TopBar>
+      <MediaContainer >
+        <Media
+          source={{
+            uri: 'https://i1.sndcdn.com/artworks-000810672895-5vv94q-t500x500.jpg',
+          }} />
+      </MediaContainer>
     </Wrapper>
   );
 };
