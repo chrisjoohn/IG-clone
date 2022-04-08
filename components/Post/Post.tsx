@@ -5,13 +5,14 @@ import { View, Image, Text } from 'react-native';
 import { Post as Props } from '../../common/PostTypes';
 
 const Wrapper = styled(View)`
-  padding: 10px 15px;
+  padding: 10px 0px;
 `;
 
 const TopBar = styled(View)`
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  padding: 0 10px;
 `;
 
 const AuthorDetailContainer = styled(View)`
