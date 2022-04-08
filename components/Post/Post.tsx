@@ -1,8 +1,10 @@
 import styled from 'styled-components/native';
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import {View, Image, Text} from 'react-native';
 
-import { Post as Props } from '../../common/PostTypes';
+import {Post as Props} from '../../common/PostTypes';
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Wrapper = styled(View)`
   padding: 10px 0px;
@@ -11,7 +13,7 @@ const Wrapper = styled(View)`
 const TopBar = styled(View)`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 0 10px;
 `;
 
@@ -41,13 +43,22 @@ const Username = styled(Text)`
 const MediaContainer = styled(View)`
   min-height: 400px;
   width: 100%;
+  margin-bottom: 5px;
 `;
 
 const Media = styled(Image)`
   width: 100%;
   max-height: 400px;
   height: 400px;
-`
+`;
+
+const ActnBtnContainer = styled(View)`
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0 5px 10px;
+`;
 
 const Post: React.FC = props => {
   /*
@@ -71,12 +82,22 @@ const Post: React.FC = props => {
           </AuthorDetail>
         </AuthorDetailContainer>
       </TopBar>
-      <MediaContainer >
+      <MediaContainer>
         <Media
           source={{
-            uri: 'https://i1.sndcdn.com/artworks-000810672895-5vv94q-t500x500.jpg',
-          }} />
+            uri: 'https://cloudfront-us-east-1.images.arcpublishing.com/coindesk/XA6KIXE6FBFM5EWSA25JI5YAU4.jpg',
+          }}
+        />
       </MediaContainer>
+      <ActnBtnContainer>
+        <Ionicons name="heart-outline" size={30} style={{marginRight: 10}} />
+        <Ionicons
+          name="chatbubble-outline"
+          size={26}
+          style={{marginRight: 13}}
+        />
+        <Ionicons name="paper-plane-outline" size={26} />
+      </ActnBtnContainer>
     </Wrapper>
   );
 };
