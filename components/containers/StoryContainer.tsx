@@ -22,7 +22,7 @@ const Story = styled(View)`
   height: 70px;
   width: 70px;
   background-color: gray;
-  border-radius: 70;
+  border-radius: 70px;
   margin: 10px 10px 10px 0;
 `;
 

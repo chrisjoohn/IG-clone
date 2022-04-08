@@ -5,6 +5,9 @@ import styled from 'styled-components/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import StoryContainer from '../../../components/containers/StoryContainer';
+import PostContainer from '../../../components/containers/PostContainer';
+
+import Post from '../../../components/Post';
 
 const TopBar = styled(View)`
   width: 100%;
@@ -73,6 +76,10 @@ const FeedScreen: React.FC = () => {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }>
         <StoryContainer />
+        <PostContainer
+          Component={Post}
+          posts={[null, null, null, null, null]}
+        />
       </ScrollView>
     </View>
   );
